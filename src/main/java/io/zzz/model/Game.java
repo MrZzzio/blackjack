@@ -20,4 +20,5 @@ public class Game {
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
+
 }
