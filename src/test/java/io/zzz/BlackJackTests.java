@@ -15,13 +15,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
 
-import static sun.audio.AudioPlayer.player;
-
 /**
  * Created by dmitry on 21.09.16.
  */
 
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 public class BlackJackTests {
 
     @Autowired
@@ -57,9 +55,18 @@ public class BlackJackTests {
         Assert.assertNotNull(card);
 
         Player player = new Player("Player Name");
-        this.playerService.takeCard(card);
+        player.setCardSet(card);
         int points = this.playerService.getPoints(player);
         Assert.assertTrue(points > 0);
+    }
+
+    @Test
+    public void testShouldCreateNewDeckAndCheckCardCount(){
+        Deck deck = new Deck();
+        Assert.assertTrue(deck.getCardCount() == 52);
+
+        Card card = this.deckService.getCardFromDeck(deck);
+        Assert.assertTrue(deck.getCardCount() == 51);
     }
 
 
