@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
@@ -19,7 +20,7 @@ import java.util.Date;
  * Created by dmitry on 21.09.16.
  */
 
-//@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 public class BlackJackTests {
 
     @Autowired
@@ -31,8 +32,12 @@ public class BlackJackTests {
     @Autowired
     PlayerService playerService;
 
+    @Autowired
+    ApplicationContext applicationContext;
+
     @Test
     public void testShouldStartGame(){
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
         Game oldGame = this.gameService.getCurrentGame();
         if (oldGame != null){
             this.gameService.closeGame(oldGame);
