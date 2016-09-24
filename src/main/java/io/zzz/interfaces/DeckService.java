@@ -8,4 +8,5 @@ import io.zzz.model.Deck;
  */
 public interface DeckService {
     Card getCardFromDeck(Deck deck);
+
 }

@@ -41,4 +41,9 @@ public class Deck {
 
         return cards;
     }
+
+    public void removeCardFromDeck(Card card) {
+        this.cardSet.remove(card);
+        this.cardCount = this.cardSet.size();
+    }
 }

@@ -15,8 +15,4 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "io.zzz")
 public class Config {
 
-    @Bean
-    public GameService gameService(){
-        return new GameServiceImpl();
-    }
 }

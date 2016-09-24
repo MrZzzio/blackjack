@@ -1,5 +1,6 @@
 package io.zzz;
 
+import io.zzz.config.Config;
 import io.zzz.interfaces.DeckService;
 import io.zzz.interfaces.GameService;
 import io.zzz.interfaces.PlayerService;
@@ -12,6 +13,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Date;
@@ -21,6 +23,7 @@ import java.util.Date;
  */
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@Import(Config.class)
 public class BlackJackTests {
 
     @Autowired

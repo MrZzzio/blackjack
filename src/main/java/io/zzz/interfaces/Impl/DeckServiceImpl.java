@@ -19,6 +19,7 @@ public class DeckServiceImpl implements DeckService {
         List<Card> cardSet = deck.getCardSet();
         Collections.shuffle(cardSet);
         Card card = cardSet.get(1);
+        deck.removeCardFromDeck(card);
         return card;
     }
 }
